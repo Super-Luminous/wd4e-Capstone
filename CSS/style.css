@@ -1,0 +1,209 @@
+
+
+:root
+{
+    --bg-color: black;
+    --text-color: white;
+}
+
+*
+{
+    box-sizing: border-box;
+    color: var(--text-color);
+    font-family: sans-serif;
+}
+
+
+
+/* property: clamp(minimum, preferred, maximum); */
+
+body
+{
+    background-color: var(--bg-color);
+}
+
+nav
+{
+    border: 1px solid var(--text-color);
+
+    display: flex;
+    flex-wrap: wrap;
+    width: clamp(200px, 95vw, 1200px);
+    height: auto;
+    margin: 10px auto 10px;
+    justify-content: center;
+    align-items: center;
+}
+
+.nav-logo
+{
+    border: 1px solid white;
+
+    height: 120px;
+    min-width: 200px;
+    margin-top: 2px;
+    margin-bottom: 2px;
+    margin-left: 2px;
+    text-align: center;
+}
+
+.nav-links
+{
+    border: 1px solid white;
+    
+    text-align: center;
+    margin: auto;
+    margin-right: 2vw;
+    width: 50%;
+}
+
+.nav-links ul
+{
+    display: flex;          /* Aligns list items horizontally */
+    list-style-type: none;  /* Removes default bullet points */
+    padding: 0;             /* Removes default left padding */
+    margin: 0;              /* Removes default margin */
+    justify-content: space-evenly;           /* Controls spacing between items */
+    font-size: 1.5rem;
+}
+
+header
+{
+    border: 1px solid white;
+
+    width: clamp(200px, 95vw, 1200px); height: auto;
+    font-size: 16pt;
+    margin: 10px auto 10px;
+    align-items: center;
+}
+
+header h1
+{
+    text-align: center;
+    font-size: 24pt;
+    margin: 2px;
+}
+
+header p
+{
+    margin-top: 10px;
+    margin-bottom: 2px;
+}
+
+
+/* Game */
+.game-window
+{
+    border: 3px solid blue;
+    width: clamp(200px, 95vw, 1200px); height: auto;
+    aspect-ratio: 16/9;
+    margin: 10px auto 10px;
+}
+
+.high-score
+{
+    border: 1px solid white;
+
+    width: clamp(200px, 95vw, 1200px); min-height: 400px;
+    margin: 10px auto 10px;
+}
+
+
+/* Gallery */
+.gallery
+{
+    border: 1px solid white;
+   
+    display: grid;
+    grid-template-columns: auto auto auto;
+    min-height: 100px;
+    width: clamp(200px, 95vw, 1200px);
+    margin: 10px auto 10px;
+    gap: 8px;
+}
+
+
+.gallery-item
+{
+    border: 1px solid cyan;
+    width: 100%;
+    height: auto;
+    aspect-ratio: 16/9;
+    text-align: center;
+}
+
+
+/* Blog */
+
+.blog-container
+{
+    border: 3px solid white;
+    width: clamp(200px, 90vw, 1200px); height: auto;
+    min-height: 100px;
+    margin: 10px auto 10px  
+}
+
+.blog-entry
+{
+    border: 1px solid magenta;
+    width: 100%;
+    min-height: 100px;
+    color: aliceblue;
+    margin: 10px auto 10px  
+}
+
+.blog-entry h1
+{
+    color: blue;
+    text-align: center;
+}
+
+
+footer
+{
+    border: 1px solid white;
+    width: clamp(200px, 95vw, 1200px); height: auto;
+    margin: 10px auto 10px;
+}
+
+.full-screen-game
+{
+    position: fixed;
+    padding: 0px;
+    margin: 0px;
+    top: 0;  left: 0;
+    width: 100%; height: 100%;
+    
+    z-index: 100;
+}
+
+ 
+
+/* Mobile Responsive Styles (Breakpoint: 768px) */
+@media (max-width: 768px)
+{
+
+    header
+    {
+        font-size: 12pt;
+        border-width: 1px;
+    }
+
+
+    .nav-links
+    {
+        display: none;
+    }
+
+    .nav-logo
+    {
+        height: 80px;
+    }
+
+    .gallery
+    {
+        grid-template-columns: auto;  
+    }
+
+
+}

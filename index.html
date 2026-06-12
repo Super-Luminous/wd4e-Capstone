@@ -1,0 +1,125 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="CSS/style.css">
+    <link rel="stylesheet" href="CSS/menu_styles.css">
+    <title>Document</title>
+</head>
+
+<body>
+    
+    <nav> 
+        <div class="nav-logo"> 
+            nav-logo
+        </div>
+
+        <!-- Desktop navigation links -->
+        <div class="nav-links">
+            <ul>
+                <li><a href="index.html">Play</a></li>
+                <li><a href="gallery.html">Screen Shots</a></li>
+                <li><a href="blog.html">Blog</a></li>
+                <li><a href="music.html">music</a></li>
+            </ul>
+        </div>
+
+        <!-- Hamburger Menu -->
+        <div class="ham-menu">
+            <span></span>
+            <span></span>
+            <span></span>
+        </div>
+
+        <!--Drop Down Menu -->
+        <div class="off-screen-menu">
+            <ul>
+                <li><a href="index.html">Play</a></li>
+                <li><a href="gallery.html">Screen Shots</a></li>
+                <li><a href="blog.html">Blog</a></li>
+                <li><a href="music.html">Music</a></li>
+            </ul>
+        </div>
+        
+
+    </nav>
+
+    <header>
+        
+        <h1>
+            Instructions
+        </h1>
+        
+
+        <p>
+            How to play the game, controlls, ect.
+            Please note that the game will not be functional untill I learn how to make that work in my other course. 
+        </p>
+
+    </header>
+
+    <main>
+
+        <div class="game-window" id="game-window">
+            <iframe 
+                src="https://super-luminous.github.io/Free-Runner/" 
+                allow="autoplay; gamepad"
+                style="border: 1px solid magenta; width: auto; height: 100%; aspect-ratio: 16/9;
+                margin: auto;
+                display: flex;"
+                >
+            </iframe>
+        </div>
+
+       
+               
+       
+    
+        <div class="high-score" id="high-score">
+            high score area 
+        </div>
+     
+    </main>
+
+
+
+
+    <footer>
+        Footer (info)
+        Lorem ipsum dolor sit amet, consectetur adipisicing elit. Accusamus quaerat fugiat nam aut. Ipsum, perferendis ea maxime nam, sit, in harum laborum cum quibusdam laboriosam non quod repellendus facere voluptates!
+    </footer>
+
+
+    <script>
+        //Detect Landscape or Portrait      
+
+        const game = document.getElementById("game-window")
+
+        let portrait = window.matchMedia("(orientation: portrait)").matches;
+        let vpWidth = window.innerWidth;
+
+
+        window.matchMedia("(orientation: portrait)").addEventListener("change", e => {
+            portrait = e.matches
+            vpWidth = window.innerWidth;
+
+            if(portrait)
+            {
+                game.classList.remove("full-screen-game");  
+            }
+            else if(vpWidth < 900)
+            {
+                game.classList.add("full-screen-game");
+            }
+        
+        });
+    
+    </script>
+
+
+<script src="javascript/hamburger.js" defer> </script>
+</body>
+
+
+</html>
