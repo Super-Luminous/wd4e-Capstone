@@ -4,6 +4,7 @@
     --border-color: white;
     --bar-color: white;
     --background-color: black;
+    interpolate-size: allow-keywords; /* Opt-in the document to animate keyword sizes globally */
 }
 
 
@@ -60,24 +61,22 @@
     transform: translate(-50%, -50%) rotate(-45deg);
 }
 
+/* Drop down Menu */
 .off-screen-menu
 {
     background-color:  var(--background-color);
-
-    display: none;
-
-    font-size: 1.25rem;
-    width: 10000px;
-    height: 0px;
+    display: flex;
+    overflow: hidden;
+    font-size: 18pt;
+    max-height: 0;
+    transition: 500ms max-height ease;
 }
-
 
 .off-screen-menu ul
 {
     list-style-type: none;  /* Removes default bullet points */
     padding: 0;             /* Removes default left padding */
     margin: 0;              /* Removes default margin */
-    height: auto;
 }
 
 .off-screen-menu li
@@ -92,9 +91,10 @@
 
 .off-screen-menu.active
 {
-    display: block;
     height: auto;
+    max-height: 400px;
 }
+
 
 @media (max-width: 768px)
 {
