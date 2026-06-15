@@ -12,16 +12,19 @@
 .ham-menu
 {
     border: 2px solid var(--border-color);
-
+    height: 0px;
     display: none; /* Hide the checkbox and hamburger button on desktop */
     flex-direction: column;
     position: relative;
     cursor: pointer;
-    height: 50px;
     aspect-ratio: 1/1;
-    margin-left: auto; 
+    margin-left: auto;
+    margin-right: 0px;
 }
 
+
+
+/* Bars */
 .ham-menu span
 {
     height: 5px;
@@ -61,11 +64,14 @@
     transform: translate(-50%, -50%) rotate(-45deg);
 }
 
+
+
 /* Drop down Menu */
 .off-screen-menu
 {
     background-color:  var(--background-color);
-    display: flex;
+    display: none; /* Hide by defult */
+    width: 100%;
     overflow: hidden;
     font-size: 18pt;
     max-height: 0;
@@ -81,27 +87,30 @@
 
 .off-screen-menu li
 {
-    /* border: 1px solid cyan; */
-    display: flex;
-    width: 100%;
-    height: 80px;
+    display: flex; /* allows to change justify and align */
     justify-content: center;
     align-items: center;
+
+    width: 100%;  height: 80px;
 }
 
 .off-screen-menu.active
 {
+    display: block; /* show when active */
     height: auto;
-    max-height: 400px;
+    max-height: 400px; /* Hack to make animation work */
 }
 
 
-@media (max-width: 768px)
+
+/* Mobile Responsive Styles (Breakpoint:  576px) */
+@media (max-width: 576px)
 {
+    /*show on mobile */
     .ham-menu
     {
         display: flex;
+        height: 50px;
+        margin-left: auto; 
     }
-
-
 }
