@@ -49,6 +49,12 @@ nav
     text-align: center;
 }
 
+.nav-logo img 
+{
+    height: 100%;
+}
+
+
 .nav-links
 {
     /* border: 1px solid white; */
@@ -134,17 +140,19 @@ header p
 .gallery
 {
     display: grid;
-    grid-template-columns: auto auto auto;
+    grid-template-columns: repeat(3, minmax(0, 1fr));
+    gap: 5px;
     min-height: 100px;
     width: clamp(200px, 95vw, 1200px);
     margin: 10px auto 10px;
-    gap: 8px;
+    padding: 0px;
+   
 }
 
 .gallery-item
 {
+    box-sizing: border-box;
     border: 1px solid white;
-    width: 100%;
     height: auto;
     aspect-ratio: 16/9;
     text-align: center;
@@ -153,6 +161,7 @@ header p
 .gallery img
 {
     width: 100%;
+    cursor: pointer;
 }
 
 .full-screen-game
@@ -232,6 +241,7 @@ footer
         height: 80px;
     }
 
+   
     .gallery
     {
         grid-template-columns: auto;  
